@@ -3,7 +3,8 @@ local_backend: true
 media_folder: "static/images/uploads"
 backend:
   name: github
-  branch: digthedill/portfolio
+  branch: main
+  repo: digthedill/portfolio
 collections:
   - label: Blog
     name: "blog"
@@ -12,4 +13,15 @@ collections:
     fields: 
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: "Pages"
+    name: "pages"
+    files:
+    - label: About Page
+      name: "about"
+      file: "src/data/about.yml"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: Intro, name: intro, widget: markdown}
+        
+              
