@@ -17,11 +17,27 @@ collections:
   - label: "Pages"
     name: "pages"
     files:
-    - label: About Page
-      name: "about"
-      file: "src/data/about.yml"
+    - label: Home Page
+      name: "home"
+      file: "src/_data/home.yaml"
       fields:
         - {label: Title, name: title, widget: string}
-        - {label: Intro, name: intro, widget: markdown}
+        - {label: Blurb, name: intro, widget: markdown}
+
+    - label: Contact Page
+      name: "contact"
+      file: "src/_data/contact.yaml"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: Blurb, name: intro, widget: markdown}
+    - label: About
+      name: "about"
+      file: "src/_data/about.yaml"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: Blurb, name: intro, widget: markdown}
+        - {label: github, name: github, widget: string}
+        - {label: linkedin, name: linkedin, widget: string}
+
         
               
