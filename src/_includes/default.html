@@ -14,11 +14,26 @@
   {% endif %}
   {% block head %}{% endblock %}
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-
 </head>
 
-<body>
-  {{ content | safe }}
+<body class="mx-auto max-w-4xl bg-amber-50 text-yellow-950">
+  <section id="container" class="mt-20 px-2">
+    <header class="mb-12">
+      <div class="border border-yellow-950 w-min p-2 rounded mb-4">
+        <a href="/">
+          <h2 class="font-black">drk</h2>
+        </a>
+      </div>
+      <nav>
+        <ul class="flex">
+          <li class="mr-4"><a class="underline" href="">Blog</a></li>
+          <li class="mr-4"><a class="underline" href="">Projects</a></li>
+          <li class="mr-4"><a class="underline" href="">Meta</a></li>
+        </ul>
+      </nav>
+    </header>
+    {{ content | safe }}
+  </section>
 </body>
 
 </html>
