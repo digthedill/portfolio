@@ -30,4 +30,21 @@ text = `text-yellow-950`
 1. wbez.org
 2. wbez mobile app
 3. thicc lizzy :) 
-    a) conert backend from strapi to decapCMS
+    a) connect backend from strapi to decapCMS
+
+Project Schema
+
+- title: str
+- description: str
+- image: {
+    src: str
+    alt: str
+    height: int
+    width: int
+    }
+- images: image[]
+
+
+### Inspiration
+https://jrb.nz/
+https://cri.dev

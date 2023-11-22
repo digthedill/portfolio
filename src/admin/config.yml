@@ -1,43 +1,59 @@
 local_backend: true
 
 media_folder: "static/imgs/uploads"
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: <%= process.env.CLOUDINARY_CLOUD_NAME %>
+    api_key: <%= process.env.CLOUDINARY_API_KEY %>
 backend:
   name: github
   branch: main
   repo: digthedill/portfolio
 collections:
-  - label: Blog
-    name: "blog"
+  - label: Post
+    name: "post"
     folder: "src/posts"
     create: true
-    fields: 
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+  - label: Project
+    name: "project"
+    folder: "src/projects"
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: intro, widget: markdown }
+      - {
+          label: "Images",
+          name: "images",
+          widget: "image",
+          media_library: { config: { multiple: true } },
+        }
   - label: "Pages"
     name: "pages"
     files:
-    - label: Home Page
-      name: "home"
-      file: "src/_data/home.yaml"
-      fields:
-        - {label: Title, name: title, widget: string}
-        - {label: Blurb, name: intro, widget: markdown}
+      - label: Home Page
+        name: "home"
+        file: "src/_data/home.yaml"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: intro, widget: markdown }
 
-    - label: Contact Page
-      name: "contact"
-      file: "src/_data/contact.yaml"
-      fields:
-        - {label: Title, name: title, widget: string}
-        - {label: Blurb, name: intro, widget: markdown}
-    - label: About
-      name: "about"
-      file: "src/_data/about.yaml"
-      fields:
-        - {label: Title, name: title, widget: string}
-        - {label: Blurb, name: intro, widget: markdown}
-        - {label: github, name: github, widget: string}
-        - {label: linkedin, name: linkedin, widget: string}
-
-        
-              
+      - label: Contact Page
+        name: "contact"
+        file: "src/_data/contact.yaml"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: intro, widget: markdown }
+      - label: About
+        name: "about"
+        file: "src/_data/about.yaml"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: intro, widget: markdown }
+          - { label: github, name: github, widget: string }
+          - { label: linkedin, name: linkedin, widget: string }
