@@ -7,6 +7,7 @@ tags:
   - ip
   - lambda
   - serverless
+  - post
 ---
 ## Why do this?
 Lambda functions in AWS have an ever changing outbound IP address due to their nature as using a server at the time of request
