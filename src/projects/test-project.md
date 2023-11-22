@@ -11,4 +11,6 @@ intro: |-
 images:
   - /static/imgs/uploads/hsvoters-060322-05.jpg
   - /static/imgs/uploads/chicago-2.jpg
+tags:
+  - project
 ---
