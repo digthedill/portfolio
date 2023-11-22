@@ -5,5 +5,6 @@ tags:
   - hello
   - someone
   - anyone
+  - post
 ---
 This is a test for tags and \`yaml\`
