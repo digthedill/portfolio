@@ -5,17 +5,10 @@ layout: default
 <section>
     <h1>Blog</h1>
     <p>Thoughts go here</p>
-    <ul>
+    <ul class="mt-8">
         {%- for post in collections.post -%}
         <li style="padding-bottom: 2rem;">
-
-            <a href=""></a>
-            {{ post.data.title }}
-            {{ post.data.date }}
-            {{ post.data.tags }}
-            {{ post.data.permalink }}
-
-
+            <a class="underline" href="/posts/{{post.data.title | slugify}}">{{ post.data.title }}</a>
         </li>
         {%- endfor -%}
     </ul>
