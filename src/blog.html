@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<section>
+    <h1>Blog</h1>
+    <p>Thoughts go here</p>
+    <ul>
+        {%- for post in collections.post -%}
+        <li style="padding-bottom: 2rem;">
+
+            <a href=""></a>
+            {{ post.data.title }}
+            {{ post.data.date }}
+            {{ post.data.tags }}
+            {{ post.data.permalink }}
+
+
+        </li>
+        {%- endfor -%}
+    </ul>
+</section>
